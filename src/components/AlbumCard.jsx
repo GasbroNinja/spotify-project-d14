@@ -9,7 +9,7 @@ const AlbumCard = ({ data }) => {
   return (
     <>
       <div class="col text-center" id={data.id}>
-        <Link to={`/${data.album.id}`}>
+        <Link to={`/album/${data.album.id}`}>
           <img class="img-fluid" src={data.album.cover_medium} alt="1" />
         </Link>
         <p>
@@ -17,7 +17,9 @@ const AlbumCard = ({ data }) => {
             Album: {data.album.title}
             <br></br>
           </Link>
-          <Link to={`/artist/${data.artist.id}`}>Artist: {data.artist.name}</Link>
+          <Link to={`/artist/${data.artist.id}`}>
+            Artist: {data.artist.name}
+          </Link>
         </p>
       </div>
     </>
