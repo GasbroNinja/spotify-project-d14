@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logoSpot from "../assets/logo/Spotify_Logo.png";
 import "../App.css";
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAlbumsAction } from '../redux/actions';
 
 
 const Sidebar = () => {
+
   return (
     <>
       <div className="col-2">
@@ -50,31 +53,6 @@ const Sidebar = () => {
                       <i className="fas fa-book-open fa-lg" />
                       &nbsp; Your Library
                     </Link>
-                  </li>
-                  <li>
-                    <div className="input-group mt-3">
-                      <input
-                        type="text"
-                        className="form-control mb-2"
-                        id="searchField"
-                        placeholder="Search"
-                        aria-label="Search"
-                        aria-describedby="basic-addon2"
-                      />
-                      <div
-                        className="input-group-append"
-                        style={{ marginBottom: "4%" }}
-                      >
-                        <button
-                          className="btn btn-outline-secondary btn"
-                          type="button"
-                          id="button-addon1"
-                          onclick="search()"
-                        >
-                          GO
-                        </button>
-                      </div>
-                    </div>
                   </li>
                 </ul>
               </div>
