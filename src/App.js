@@ -10,8 +10,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeSearch />} />
-        <Route path="/:album" element={<Album />} />
-        <Route path="/:artist" element={<Artist />} />
+        <Route path="/album/:album" element={<Album />} />
+        <Route path="/artist/:artist" element={<Artist />} />
       </Routes>
     </BrowserRouter>
   );

@@ -13,11 +13,11 @@ const AlbumCard = ({ data }) => {
           <img class="img-fluid" src={data.album.cover_medium} alt="1" />
         </Link>
         <p>
-          <Link to={`/${data.album.id}`}>
+          <Link to={`/album/${data.album.id}`}>
             Album: {data.album.title}
             <br></br>
           </Link>
-          <Link to={`/${data.artist.id}`}>Artist: {data.artist.name}</Link>
+          <Link to={`/artist/${data.artist.id}`}>Artist: {data.artist.name}</Link>
         </p>
       </div>
     </>
