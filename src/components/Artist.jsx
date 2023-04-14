@@ -36,7 +36,9 @@ const Artist = () => {
             <div className="row">
               <div className="col-12 col-md-10 col-lg-10 mt-5">
                 <h2 className="titleMain">{/*data.artist.title*/}</h2>
-                <div id="followers" />  
+                <div id="followers"> 
+                
+                </div>  
                 <div
                   className="d-flex justify-content-center"
                   id="button-container"
