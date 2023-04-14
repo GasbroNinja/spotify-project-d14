@@ -6,7 +6,7 @@ import Sidebar from './Sidebar';
 import Player from './Player';
 
 
-const Album = () => {
+const Album = (props) => {
   return (
     <div>
       <div className="container-fluid vw-100 vh-100">
@@ -34,11 +34,13 @@ const Album = () => {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-3 pt-5 text-center" id="img-container" />
+              <div className="col-md-3 pt-5 text-center" id="img-container">
+                
+              </div>
               <div className="col-md-8 p-5">
                 <div className="row">
                   <div className="col-md-10 mb-5" id="trackList">
-                    
+
                   </div>
                 </div>
               </div>
