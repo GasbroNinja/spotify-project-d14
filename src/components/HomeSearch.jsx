@@ -6,41 +6,27 @@ import { Link } from 'react-router-dom';
 //import Sidebar from './Sidebar';
 import Player from './Player';
 import AlbumCard from './AlbumCard';
-//import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAlbumsAction } from '../redux/actions';
 
 
 const HomeSearch = () => {
-    //const album = useSelector((state) => state.album.content);
+    const album = useSelector((state) => state.album.content);
+    const dispatch = useDispatch();
     
     const [query, setQuery] = useState("");
-    const [album, setAlbum] = useState([])
 
     const handleChange = (e) => {
     setQuery(e.target.value);
     };
 
     const handleSubmit = async (e) => {
-    e.preventDefault();
+      e.preventDefault();
+      dispatch(getAlbumsAction(query));
+    };
 
-  const funcData = async () => {
-    const baseEndpoint =
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
-    try {
-      const response = await fetch(baseEndpoint + query );
-      if (response.ok) {
-        const { data } = await response.json();
-        setAlbum(data);
-        //dispatch({ type: ADD_ALBUM, payload: data });
-      } else {
-        alert("Error fetching results");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+
     
-    };
-    funcData()
-    };
 
 
 
@@ -174,39 +160,6 @@ const HomeSearch = () => {
                       <AlbumCard key={albumData.id} data={albumData} />
                     ))}
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-10">
-                <div id="rock">
-                  <h2>Rock Classics</h2>
-                  <div
-                    className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
-                    id="rockSection"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-10">
-                <div id="pop">
-                  <h2>Pop Culture</h2>
-                  <div
-                    className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
-                    id="popSection"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-10">
-                <div id="hiphop">
-                  <h2>#HipHop</h2>
-                  <div
-                    className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
-                    id="hipHopSection"
-                  />
                 </div>
               </div>
             </div>
