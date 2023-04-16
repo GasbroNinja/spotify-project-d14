@@ -1,23 +1,21 @@
-
-/*
-import { pppppp, llllll } from "../actions";
+import { ADD_TO_FAVOURITES, REMOVE_FROM_FAVOURITES } from "../actions";
 
 const initialState = {
-  content: [],
+  content: []
 };
 
-const exampleReducer = (state = initialState, action) => {
+const favouritesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case pppppp:
+    case ADD_TO_FAVOURITES:
       return {
         ...state,
-        content: [...state.content, action.payload],
+        content: [...state.content, action.payload]
       };
 
-    case llllll:
+    case REMOVE_FROM_FAVOURITES:
       return {
         ...state,
-        content: state.content.filter((data) => data !== action.payload)
+        content: state.content.filter((songs) => songs !== action.payload)
       };
 
     default:
@@ -25,5 +23,4 @@ const exampleReducer = (state = initialState, action) => {
   }
 };
 
-export default exampleReducer;
-*/
+export default favouritesReducer;

@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+//import React, { useState } from 'react'
 import logoSpot from "../assets/logo/Spotify_Logo.png";
 import "../App.css";
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAlbumsAction } from '../redux/actions';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getAlbumsAction } from '../redux/actions';
 
 
-const Sidebar = () => {
+const Sidebar = () => { 
 
   return (
     <>

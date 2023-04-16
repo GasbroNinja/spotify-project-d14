@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import logoSpot from "../assets/logo/Spotify_Logo.png";
 
 import "../App.css";
@@ -72,7 +72,7 @@ const HomeSearch = () => {
                   <div className="navbar-nav">
                     <ul>
                       <li>
-                        <a className="nav-item nav-link" href="index.html">
+                        <a className="nav-item nav-link" href="/">
                           <i className="fas fa-home fa-lg" />
                           &nbsp; Home
                         </a>

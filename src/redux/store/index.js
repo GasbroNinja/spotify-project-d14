@@ -1,10 +1,15 @@
 import { configureStore, combineReducers} from "@reduxjs/toolkit"
 import albumReducer from "../reducers/albumReducer";
+import favouritesReducer from "../reducers/favouritesReducers";
+import isPlayReducer from "../reducers/isPlayReducer";
+
 
 
 
 const rootReducer = combineReducers({
   album: albumReducer,
+  favorites: favouritesReducer,
+  isPlay: isPlayReducer
 });
 
 const store = configureStore({
