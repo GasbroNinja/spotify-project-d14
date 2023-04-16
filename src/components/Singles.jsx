@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
-  addToPlayListAction,
+    addToFavouritesAction,
   isPlayAction,
-  removeFromPlayListAction,
-} from "../redux/action";
-import AddToPlayListBtn from "./AddToPlayListBtn";
+  removeFromFavouritesAction,
+} from "../redux/actions";
+
 
 const Singles = ({ song }) => {
   const dispatch = useDispatch();
@@ -28,8 +28,8 @@ const Singles = ({ song }) => {
           }`}
           onClick={() => {
             isInFavourites
-              ? dispatch(removeFromPlayListAction(song))
-              : dispatch(addToPlayListAction(song));
+              ? dispatch(addToFavouritesAction(song))
+              : dispatch(removeFromFavouritesAction(song));
           }}
         >
           <svg
@@ -66,7 +66,6 @@ const Singles = ({ song }) => {
           </svg>
         </button>
       </div>
-      <AddToPlayListBtn song={song} />
       <p>
         <Link className="d-block" to={`/album/${song.album.id}`}>
           Album:{" "}

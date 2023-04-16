@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
 
 import "../App.css";
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Player from './Player';
@@ -15,7 +15,7 @@ const Artist = () => {
 
     const params = useParams();
 
-    const [artistData, setArtistData] = useState(null);
+    const [artistData, setArtistData] = useState([]);
     const [artistSong, setArtistSong] = useState([]);
 
     useEffect(() => {

@@ -8,7 +8,7 @@ import isPlayReducer from "../reducers/isPlayReducer";
 
 const rootReducer = combineReducers({
   album: albumReducer,
-  favorites: favouritesReducer,
+  favourites: favouritesReducer,
   isPlay: isPlayReducer
 });
 
