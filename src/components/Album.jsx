@@ -12,6 +12,7 @@ const Album = () => {
   const params = useParams();
   const [albumData, setAlbumData] = useState([]);
 
+
   useEffect(() => {
     const fetchData = async (url) => {
       try {
@@ -19,6 +20,7 @@ const Album = () => {
         if (response.ok) {
           const data = await response.json();
           setAlbumData(data);
+          
         }
       } catch (error) {
         console.log(error);
@@ -26,6 +28,8 @@ const Album = () => {
     };
 
     fetchData(`${URL_ALBUM_TO_SINGLE}${params.id}`);
+
+    
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -40,19 +44,19 @@ const Album = () => {
           <div className="col-12 col-md-9 offset-md-3 mainPage">
             <div className="row mb-3">
               <div className="col-9 col-lg-11 mainLinks d-none d-md-flex">
-                <Link to="/:album" className="text-decoration-none">
+                <Link to="/album/:id" className="text-decoration-none">
                   TRENDING
                 </Link>
-                <Link to="/:album" className="text-decoration-none">
+                <Link to="/album/:id" className="text-decoration-none">
                   PODCAST
                 </Link>
-                <Link to="/:album" className="text-decoration-none">
+                <Link to="/album/:id" className="text-decoration-none">
                   MOODS AND GENRES
                 </Link>
-                <Link to="/:album" className="text-decoration-none">
+                <Link to="/album/:id" className="text-decoration-none">
                   NEW RELEASES
                 </Link>
-                <Link to="/:album" className="text-decoration-none">
+                <Link to="/album/:id" className="text-decoration-none">
                   DISCOVER
                 </Link>
               </div>
@@ -74,7 +78,7 @@ const Album = () => {
                         <p className="album-title">{albumData.title}</p>
                       </div>
                       <div className="text-center">
-                        <p className="artist-name">{albumData.artist.name}</p>
+                        <p className="artist-name">{albumData.name}</p>
                       </div>
                       <div className="mt-4 text-center">
                         <button
@@ -93,7 +97,7 @@ const Album = () => {
                   <div className="row">
                     <div className="col-md-10 mb-5" id="trackList">
                       <div className="row">
-                        <div className="col-md-10 mb-5" id="trackList">
+                        <div className="col-md-10 mb-5">
                           {albumData.tracks.data.map((song) => (
                             <TrackHover key={song.id} song={song} />
                           ))}
